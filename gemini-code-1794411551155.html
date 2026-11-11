@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Spotlight 10 • Module 2c: Grammar in Use (Worksheet)</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg-page: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #cbd5e1;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --error: #dc2626;
+      --error-bg: #fee2e2;
+      --accent: #4f46e5;
+      --warning: #d97706;
+      --warning-bg: #fef3c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      background-color: var(--bg-page);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      overflow-y: auto;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 12px 60px 12px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 20px 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      text-align: center;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .progress-sticky {
+      position: sticky;
+      top: 10px;
+      z-index: 50;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .progress-sticky span {
+      color: var(--primary);
+    }
+
+    .exercise-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 18px 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e2e8f0;
+    }
+
+    .exercise-header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .exercise-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .exercise-title .num-badge {
+      background: var(--primary);
+      color: #ffffff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .exercise-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .item-block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .item-dialogue {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dialogue-line {
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .speaker {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 4px;
+    }
+
+    select.answer-select {
+      display: inline-block;
+      width: auto;
+      min-width: 135px;
+      max-width: 100%;
+      height: 38px;
+      padding: 4px 10px;
+      margin: 2px 4px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      background-color: #ffffff;
+      border: 2px solid #94a3b8;
+      border-radius: 8px;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+      vertical-align: middle;
+    }
+
+    select.answer-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    select.full-width {
+      width: 100%;
+      min-width: 100%;
+      margin: 6px 0 2px 0;
+    }
+
+    select.correct-answer {
+      border-color: var(--success) !important;
+      background-color: var(--success-bg) !important;
+      color: #14532d !important;
+      font-weight: 700;
+    }
+
+    select.wrong-answer {
+      border-color: var(--error) !important;
+      background-color: var(--error-bg) !important;
+      color: #7f1d1d !important;
+      font-weight: 700;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .btn {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.15s, background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-reset {
+      background-color: #e2e8f0;
+      color: #334155;
+    }
+
+    .btn-reset:hover {
+      background-color: #cbd5e1;
+    }
+
+    /* Секция результатов */
+    #results-section {
+      display: none;
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 22px 18px;
+      margin-bottom: 24px;
+      border: 2px solid #e2e8f0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .score-banner {
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+    }
+
+    .score-number {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .grade-badge {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .grade-5 { background: var(--success-bg); color: var(--success); border: 2px solid var(--success); }
+    .grade-4 { background: #dbeafe; color: var(--primary); border: 2px solid var(--primary); }
+    .grade-3 { background: var(--warning-bg); color: var(--warning); border: 2px solid var(--warning); }
+    .grade-2 { background: var(--error-bg); color: var(--error); border: 2px solid var(--error); }
+
+    /* Таблица критериев оценивания */
+    .grading-scale-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 14px;
+      font-size: 0.88rem;
+    }
+
+    .grading-scale-card table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .grading-scale-card th, .grading-scale-card td {
+      border: 1px solid #cbd5e1;
+      padding: 6px;
+    }
+
+    .grading-scale-card th {
+      background: #f1f5f9;
+      font-weight: 700;
+    }
+
+    /* Раздел: Работа над ошибками */
+    .error-review-box {
+      margin-top: 20px;
+    }
+
+    .error-review-box h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .error-item {
+      background: #fff5f5;
+      border-left: 4px solid var(--error);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .error-item .item-title {
+      font-weight: 700;
+      color: #991b1b;
+      margin-bottom: 4px;
+    }
+
+    .error-item .choice-info {
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .error-item .rule-text {
+      background: #ffffff;
+      border: 1px dashed #fca5a5;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #7f1d1d;
+      margin-top: 6px;
+    }
+
+    .all-correct-box {
+      background: var(--success-bg);
+      border: 1px solid #86efac;
+      color: #14532d;
+      padding: 16px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 10px 8px 50px 8px; }
+      header { padding: 16px 12px; }
+      header h1 { font-size: 1.18rem; }
+      select.answer-select { min-width: 120px; font-size: 0.9rem; }
+      .score-number { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">Spotlight 10 • Module 2c</div>
+      <h1>Grammar in Use: Infinitive & -ing form</h1>
+      <p>Комплексный интерактивный лист с оцениванием и разбором смысловых глаголов</p>
+    </header>
+
+    <div class="progress-sticky">
+      <div>Прогресс выполнения:</div>
+      <div><span id="answered-count">0</span> из 40</div>
+    </div>
+
+    <!-- УПРАЖНЕНИЕ 1 -->
+    <section class="exercise-card">
+      <div class="exercise-header">
+        <div class="exercise-title">
+          <span class="num-badge">1</span>
+          <span>Put the verbs in brackets into the correct form</span>
+        </div>
+        <p class="exercise-desc">Выберите подходящую форму глагола из выпадающего списка.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">1 A:</span> Would you like 
+            <select class="answer-select" data-id="ex1_1a" data-correct="to go" data-ex="Ex 1, №1 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="go">go</option>
+              <option value="to go">to go</option>
+              <option value="going">going</option>
+            </select>
+            bowling tonight?
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> No, thanks. I hate 
+            <select class="answer-select" data-id="ex1_1b" data-correct="bowling" data-ex="Ex 1, №1 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="bowl">bowl</option>
+              <option value="to bowl">to bowl</option>
+              <option value="bowling">bowling</option>
+            </select>
+            .
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">2 A:</span> I can't wait 
+            <select class="answer-select" data-id="ex1_2a" data-correct="to get" data-ex="Ex 1, №2 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="get">get</option>
+              <option value="to get">to get</option>
+              <option value="getting">getting</option>
+            </select>
+            home.
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Neither can I. I'm really looking forward to 
+            <select class="answer-select" data-id="ex1_2b" data-correct="opening" data-ex="Ex 1, №2 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="open">open</option>
+              <option value="to open">to open</option>
+              <option value="opening">opening</option>
+            </select>
+            our presents.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">3 A:</span> Remind me 
+            <select class="answer-select" data-id="ex1_3a" data-correct="to walk" data-ex="Ex 1, №3 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="walk">walk</option>
+              <option value="to walk">to walk</option>
+              <option value="walking">walking</option>
+            </select>
+            the dog before I leave in the morning, will you?
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Sure, but you know I wouldn't mind 
+            <select class="answer-select" data-id="ex1_3b" data-correct="doing" data-ex="Ex 1, №3 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="do">do</option>
+              <option value="to do">to do</option>
+              <option value="doing">doing</option>
+            </select>
+            it for you.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">4 A:</span> I'm not very keen on 
+            <select class="answer-select" data-id="ex1_4a" data-correct="playing" data-ex="Ex 1, №4 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="play">play</option>
+              <option value="to play">to play</option>
+              <option value="playing">playing</option>
+            </select>
+            board games.
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Me neither. I can't stand 
+            <select class="answer-select" data-id="ex1_4b" data-correct="waiting" data-ex="Ex 1, №4 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="wait">wait</option>
+              <option value="to wait">to wait</option>
+              <option value="waiting">waiting</option>
+            </select>
+            for someone to make their move.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">5 A:</span> I can't help 
+            <select class="answer-select" data-id="ex1_5a" data-correct="laughing" data-ex="Ex 1, №5 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="laugh">laugh</option>
+              <option value="to laugh">to laugh</option>
+              <option value="laughing">laughing</option>
+            </select>
+            when I see him.
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Yeah, and I love 
+            <select class="answer-select" data-id="ex1_5b" data-correct="teasing" data-ex="Ex 1, №5 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="tease">tease</option>
+              <option value="to tease">to tease</option>
+              <option value="teasing">teasing</option>
+            </select>
+            him.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- УПРАЖНЕНИЕ 2 -->
+    <section class="exercise-card">
+      <div class="exercise-header">
+        <div class="exercise-title">
+          <span class="num-badge">2</span>
+          <span>Choose the correct sentence</span>
+        </div>
+        <p class="exercise-desc">Выберите единственно верный вариант предложения из списка.</p>
+      </div>
+
+      <div class="item-block">
+        <strong>1.</strong>
+        <select class="answer-select full-width" data-id="ex2_1" data-correct="b" data-ex="Ex 2, №1">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) He was mean and made the child to cry.</option>
+          <option value="b">b) He was mean and made the child cry.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>2.</strong>
+        <select class="answer-select full-width" data-id="ex2_2" data-correct="b" data-ex="Ex 2, №2">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) Let me to have your dictionary for a while.</option>
+          <option value="b">b) Let me have your dictionary for a while.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>3.</strong>
+        <select class="answer-select full-width" data-id="ex2_3" data-correct="a" data-ex="Ex 2, №3">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) I would love to watch a good comedy now.</option>
+          <option value="b">b) I would love watching a good comedy now.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>4.</strong>
+        <select class="answer-select full-width" data-id="ex2_4" data-correct="a" data-ex="Ex 2, №4">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) Jake really enjoys going to the gym.</option>
+          <option value="b">b) Jake really enjoys to go to the gym.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>5.</strong>
+        <select class="answer-select full-width" data-id="ex2_5" data-correct="b" data-ex="Ex 2, №5">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) Could you remind me posting the letter?</option>
+          <option value="b">b) Could you remind me to post the letter?</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>6.</strong>
+        <select class="answer-select full-width" data-id="ex2_6" data-correct="a" data-ex="Ex 2, №6">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) I honestly don't mind doing the shopping for you.</option>
+          <option value="b">b) I honestly don't mind to do the shopping for you.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>7.</strong>
+        <select class="answer-select full-width" data-id="ex2_7" data-correct="b" data-ex="Ex 2, №7">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) They must to work long hours if they want to make money.</option>
+          <option value="b">b) They must work long hours if they want to make money.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>8.</strong>
+        <select class="answer-select full-width" data-id="ex2_8" data-correct="b" data-ex="Ex 2, №8">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) Can you imagine to be as famous as her?</option>
+          <option value="b">b) Can you imagine being as famous as her?</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>9.</strong>
+        <select class="answer-select full-width" data-id="ex2_9" data-correct="a" data-ex="Ex 2, №9">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) I look forward to seeing you at the party.</option>
+          <option value="b">b) I look forward to see you at the party.</option>
+        </select>
+      </div>
+
+      <div class="item-block">
+        <strong>10.</strong>
+        <select class="answer-select full-width" data-id="ex2_10" data-correct="b" data-ex="Ex 2, №10">
+          <option value="" disabled selected>-- выберите верное предложение --</option>
+          <option value="a">a) Would you mind to help me with the dishes?</option>
+          <option value="b">b) Would you mind helping me with the dishes?</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- УПРАЖНЕНИЕ 3 -->
+    <section class="exercise-card">
+      <div class="exercise-header">
+        <div class="exercise-title">
+          <span class="num-badge">3</span>
+          <span>Put the verbs in brackets in the infinitive or -ing form</span>
+        </div>
+        <p class="exercise-desc">Раскройте скобки в коротких диалогах.</p>
+      </div>
+
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">1 A:</span> Will you let me 
+            <select class="answer-select" data-id="ex3_1a" data-correct="borrow" data-ex="Ex 3, №1 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="borrow">borrow</option>
+              <option value="to borrow">to borrow</option>
+              <option value="borrowing">borrowing</option>
+            </select>
+            your black jacket tonight?
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> No way! I want 
+            <select class="answer-select" data-id="ex3_1b" data-correct="to wear" data-ex="Ex 3, №1 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="wear">wear</option>
+              <option value="to wear">to wear</option>
+              <option value="wearing">wearing</option>
+            </select>
+            it myself.
+          </div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">2 A:</span> I can't wait 
+            <select class="answer-select" data-id="ex3_2a" data-correct="to get" data-ex="Ex 3, №2 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="get">get</option>
+              <option value="to get">to get</option>
+              <option value="getting">getting</option>
+            </select>
+            to know everyone.
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Really? I can't stand 
+            <select class="answer-select" data-id="ex3_2b" data-correct="meeting" data-ex="Ex 3, №2 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="meet">meet</option>
+              <option value="to meet">to meet</option>
+              <option value="meeting">meeting</option>
+            </select>
+            new people.
+          </div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">3 A:</span> Do you enjoy 
+            <select class="answer-select" data-id="ex3_3a" data-correct="going" data-ex="Ex 3, №3 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="go">go</option>
+              <option value="to go">to go</option>
+              <option value="going">going</option>
+            </select>
+            to the gym?
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Yeah, but I hate 
+            <select class="answer-select" data-id="ex3_3b" data-correct="doing" data-ex="Ex 3, №3 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="do">do</option>
+              <option value="to do">to do</option>
+              <option value="doing">doing</option>
+            </select>
+            aerobics.
+          </div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">4 A:</span> Sorry, but you can't 
+            <select class="answer-select" data-id="ex3_4a" data-correct="sit" data-ex="Ex 3, №4 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="sit">sit</option>
+              <option value="to sit">to sit</option>
+              <option value="sitting">sitting</option>
+            </select>
+            there.
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> That's OK! I don't mind 
+            <select class="answer-select" data-id="ex3_4b" data-correct="standing" data-ex="Ex 3, №4 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="stand">stand</option>
+              <option value="to stand">to stand</option>
+              <option value="standing">standing</option>
+            </select>
+            .
+          </div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <div class="item-dialogue">
+          <div class="dialogue-line">
+            <span class="speaker">5 A:</span> Do you fancy 
+            <select class="answer-select" data-id="ex3_5a" data-correct="going" data-ex="Ex 3, №5 (A)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="go">go</option>
+              <option value="to go">to go</option>
+              <option value="going">going</option>
+            </select>
+            to the tennis match on Sunday?
+          </div>
+          <div class="dialogue-line">
+            <span class="speaker">B:</span> Come on. You know I can't stand 
+            <select class="answer-select" data-id="ex3_5b" data-correct="watching" data-ex="Ex 3, №5 (B)">
+              <option value="" disabled selected>-- форма --</option>
+              <option value="watch">watch</option>
+              <option value="to watch">to watch</option>
+              <option value="watching">watching</option>
+            </select>
+            tennis.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- НОВОЕ УПРАЖНЕНИЕ 4: ГЛАГОЛЫ СО СМЕНОЙ ЗНАЧЕНИЯ -->
+    <section class="exercise-card">
+      <div class="exercise-header">
+        <div class="exercise-title">
+          <span class="num-badge">4</span>
+          <span>Differences in meaning: remember, stop, forget, try, regret</span>
+        </div>
+        <p class="exercise-desc">Выберите верную форму в зависимости от контекста и вектора времени.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="item-block">
+        <strong>1.</strong> Please remember 
+        <select class="answer-select" data-id="ex4_1" data-correct="to lock" data-ex="Ex 4, №1 (remember)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to lock">to lock</option>
+          <option value="locking">locking</option>
+          <option value="lock">lock</option>
+        </select>
+        the front door when you leave. <em>(напоминание: не забудь сделать в будущем)</em>
+      </div>
+
+      <!-- 2 -->
+      <div class="item-block">
+        <strong>2.</strong> I distinctly remember 
+        <select class="answer-select" data-id="ex4_2" data-correct="locking" data-ex="Ex 4, №2 (remember)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to lock">to lock</option>
+          <option value="locking">locking</option>
+          <option value="lock">lock</option>
+        </select>
+        the front door — I even double-checked the key! <em>(воспоминание о действии в прошлом)</em>
+      </div>
+
+      <!-- 3 -->
+      <div class="item-block">
+        <strong>3.</strong> On his way home from work, he stopped 
+        <select class="answer-select" data-id="ex4_3" data-correct="to buy" data-ex="Ex 4, №3 (stop)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to buy">to buy</option>
+          <option value="buying">buying</option>
+          <option value="buy">buy</option>
+        </select>
+        some fresh bread at the bakery. <em>(сделал паузу в пути с целью совершить покупку)</em>
+      </div>
+
+      <!-- 4 -->
+      <div class="item-block">
+        <strong>4.</strong> You should stop 
+        <select class="answer-select" data-id="ex4_4" data-correct="spending" data-ex="Ex 4, №4 (stop)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to spend">to spend</option>
+          <option value="spending">spending</option>
+          <option value="spend">spend</option>
+        </select>
+        all your pocket money on junk food. <em>(прекратить привычку / действие)</em>
+      </div>
+
+      <!-- 5 -->
+      <div class="item-block">
+        <strong>5.</strong> Don't forget 
+        <select class="answer-select" data-id="ex4_5" data-correct="to turn off" data-ex="Ex 4, №5 (forget)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to turn off">to turn off</option>
+          <option value="turning off">turning off</option>
+          <option value="turn off">turn off</option>
+        </select>
+        the lights before you go to bed. <em>(не забудь выполнить действие)</em>
+      </div>
+
+      <!-- 6 -->
+      <div class="item-block">
+        <strong>6.</strong> I will never forget 
+        <select class="answer-select" data-id="ex4_6" data-correct="visiting" data-ex="Ex 4, №6 (forget)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to visit">to visit</option>
+          <option value="visiting">visiting</option>
+          <option value="visit">visit</option>
+        </select>
+        London for the first time; it was amazing! <em>(не забуду яркое пережитое событие)</em>
+      </div>
+
+      <!-- 7 -->
+      <div class="item-block">
+        <strong>7.</strong> If your computer is running slowly, try 
+        <select class="answer-select" data-id="ex4_7" data-correct="restarting" data-ex="Ex 4, №7 (try)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to restart">to restart</option>
+          <option value="restarting">restarting</option>
+          <option value="restart">restart</option>
+        </select>
+        it to see if that helps. <em>(провести эксперимент / опробовать способ)</em>
+      </div>
+
+      <!-- 8 -->
+      <div class="item-block">
+        <strong>8.</strong> She tried 
+        <select class="answer-select" data-id="ex4_8" data-correct="to lift" data-ex="Ex 4, №8 (try)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to lift">to lift</option>
+          <option value="lifting">lifting</option>
+          <option value="lift">lift</option>
+        </select>
+        the heavy box, but it was far too heavy for her. <em>(приложить максимум усилий к барьеру)</em>
+      </div>
+
+      <!-- 9 -->
+      <div class="item-block">
+        <strong>9.</strong> We regret 
+        <select class="answer-select" data-id="ex4_9" data-correct="to inform" data-ex="Ex 4, №9 (regret)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to inform">to inform</option>
+          <option value="informing">informing</option>
+          <option value="inform">inform</option>
+        </select>
+        you that flight BA-204 has been cancelled. <em>(официальное сожаление о новости прямо сейчас)</em>
+      </div>
+
+      <!-- 10 -->
+      <div class="item-block">
+        <strong>10.</strong> He now regrets 
+        <select class="answer-select" data-id="ex4_10" data-correct="telling" data-ex="Ex 4, №10 (regret)">
+          <option value="" disabled selected>-- форма --</option>
+          <option value="to tell">to tell</option>
+          <option value="telling">telling</option>
+          <option value="tell">tell</option>
+        </select>
+        his friend about the surprise party. <em>(раскаяние о совершенном поступке в прошлом)</em>
+      </div>
+    </section>
+
+    <!-- РЕЗУЛЬТАТЫ И ШКАЛА ОЦЕНИВАНИЯ -->
+    <section id="results-section">
+      <div class="score-banner">
+        <div style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">ИТОГИ ТЕСТИРОВАНИЯ</div>
+        <div class="score-number"><span id="final-score">0</span> / 40</div>
+        <div style="font-size: 1.1rem; font-weight: 700; color: #475569;" id="final-percent">0%</div>
+        
+        <div>
+          <span class="grade-badge" id="grade-badge-el">Отметка: 5</span>
+        </div>
+        <div id="final-comment" style="margin-top: 10px; font-weight: 600;"></div>
+
+        <!-- Таблица шкалы -->
+        <div class="grading-scale-card">
+          <strong style="display:block; margin-bottom: 6px;">Шкала оценивания:</strong>
+          <table>
+            <thead>
+              <tr>
+                <th>Баллы (из 40)</th>
+                <th>Процент</th>
+                <th>Школьная отметка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f0fdf4;">
+                <td>36 – 40</td>
+                <td>90% – 100%</td>
+                <td><strong>«5» (Отлично)</strong></td>
+              </tr>
+              <tr style="background:#eff6ff;">
+                <td>30 – 35</td>
+                <td>75% – 89%</td>
+                <td><strong>«4» (Хорошо)</strong></td>
+              </tr>
+              <tr style="background:#fffbeb;">
+                <td>20 – 29</td>
+                <td>50% – 74%</td>
+                <td><strong>«3» (Удовлетворительно)</strong></td>
+              </tr>
+              <tr style="background:#fef2f2;">
+                <td>0 – 19</td>
+                <td>менее 50%</td>
+                <td><strong>«2» (Неудовлетворительно)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="error-review-box">
+        <h3>Разбор заданий и работа над ошибками</h3>
+        <div id="error-list-container"></div>
+      </div>
+    </section>
+
+    <!-- КНОПКИ -->
+    <div class="controls">
+      <button class="btn btn-submit" id="submit-btn" onclick="checkAnswers()">
+        Проверить ответы
+      </button>
+      <button class="btn btn-reset" id="reset-btn" onclick="resetWorksheet()" style="display: none;">
+        Пройти заново
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const explanations = {
+      ex1_1a: "После конструкции 'would like' используется инфинитив с частицей to (to-infinitive), так как выражается конкретное единичное желание в данный момент.",
+      ex1_1b: "После глагола 'hate' для выражения общего отношения/нелюбви к действию употребляется форма герундия (-ing).",
+      ex1_2a: "После устойчивого выражения 'can't wait' (не терпится) всегда используется инфинитив с частицей to (to-infinitive).",
+      ex1_2b: "В идиоме 'look forward to' слово 'to' является предлогом. После любых предлогов глагол принимает форму -ing (opening).",
+      ex1_3a: "После глагола 'remind someone' (напомнить кому-то сделать что-то в будущем) ставится to-infinitive (to walk).",
+      ex1_3b: "После 'wouldn't mind / don't mind' (не возражать) всегда следует форма герундия -ing (doing).",
+      ex1_4a: "После устойчивого сочетания 'be keen on' (увлекаться) стоит предлог 'on'. После любых предлогов ставится форма -ing (playing).",
+      ex1_4b: "После идиомы 'can't stand' (терпеть не могу) всегда используется герундий -ing (waiting).",
+      ex1_5a: "После выражения 'can't help' (не могу удержаться от / не могу не) традиционно ставится форма -ing (laughing).",
+      ex1_5b: "После глаголов чувств и предпочтений в общем смысле (love, like, enjoy) употребляется форма -ing (teasing).",
+
+      ex2_1: "Глагол побуждения 'make' в активном залоге требует после себя инфинитив БЕЗ частицы to: 'made the child cry'.",
+      ex2_2: "После глагола разрешения 'let' в активном залоге всегда используется голый инфинитив без частицы to: 'let me have'.",
+      ex2_3: "Конструкция со словом would ('would love') всегда требует инфинитив с частицей to: 'would love to watch'.",
+      ex2_4: "Глагол 'enjoy' всегда употребляется с герундием: 'enjoys going'. Форма инфинитива с enjoy недопустима.",
+      ex2_5: "Глагол 'remind' в значении «напомнить сделать что-то намеченное» требует инфинитив с частицей to: 'remind me to post'.",
+      ex2_6: "После отрицательного оборота 'don't mind' всегда ставится форма -ing: 'don't mind doing'.",
+      ex2_7: "После модального глагола 'must' частица to никогда не ставится: 'must work'.",
+      ex2_8: "После глагола 'imagine' (представлять себе, воображать) требуется герундий: 'imagine being'.",
+      ex2_9: "В обороте 'look forward to' слово 'to' — это предлог, а не частица инфинитива. После него обязательно ставится -ing: 'look forward to seeing'.",
+      ex2_10: "В формуле вежливой просьбы 'Would you mind...?' глагол обязательно ставится в форму герундия: 'mind helping'.",
+
+      ex3_1a: "После глагола разрешения 'let' ставится инфинитив БЕЗ частицы to: 'let me borrow'.",
+      ex3_1b: "После глагола желания 'want' всегда употребляется инфинитив с частицей to: 'want to wear'.",
+      ex3_2a: "Выражение 'can't wait' требует после себя инфинитив с to: 'can't wait to get'.",
+      ex3_2b: "После идиомы 'can't stand' (не выносить) ставится герундий: 'can't stand meeting'.",
+      ex3_3a: "После глагола 'enjoy' (наслаждаться, любить делать) всегда идет форма -ing: 'enjoy going'.",
+      ex3_3b: "Глагол 'hate' при выражении постоянной нелюбви к действию присоединяет герундий: 'hate doing'.",
+      ex3_4a: "После модального глагола 'can / can't' используется голый инфинитив без to: 'can't sit'.",
+      ex3_4b: "После 'don't mind' глагол всегда принимает окончание -ing: 'don't mind standing'.",
+      ex3_5a: "Разговорный глагол 'fancy' (хотеть, иметь охоту) требует формы -ing: 'fancy going'.",
+      ex3_5b: "После оборота 'can't stand' употребляется форма герундия: 'can't stand watching'.",
+
+      ex4_1: "Remember + to-infinitive означает «помнить о задаче, не забыть сделать что-то в будущем» (Remember to lock).",
+      ex4_2: "Remember + -ing form означает «помнить сам факт/событие из прошлого как воспоминание» (I remember locking).",
+      ex4_3: "Stop + to-infinitive выражает цель: «сделать паузу в одном действии ради того, чтобы начать другое» (stopped to buy).",
+      ex4_4: "Stop + -ing form означает «полностью бросить, прекратить действие или привычку» (stop spending).",
+      ex4_5: "Forget + to-infinitive означает «забыть сделать запланированное действие» (Don't forget to turn off).",
+      ex4_6: "Forget + -ing form используется при воспоминании о пережитом опыте в прошлом (I'll never forget visiting).",
+      ex4_7: "Try + -ing form означает «провести эксперимент, попробовать что-то в качестве метода решения проблемы» (try restarting).",
+      ex4_8: "Try + to-infinitive означает «приложить максимум физических усилий для преодоления барьера» (tried to lift).",
+      ex4_9: "Regret + to-infinitive используется в официальном речевом этикете: «с сожалением сообщать неприятное сейчас» (regret to inform).",
+      ex4_10: "Regret + -ing form выражает раскаяние и горечь по поводу поступка, совершенного в прошлом (regrets telling)."
+    };
+
+    function updateProgress() {
+      const selects = document.querySelectorAll('select.answer-select');
+      let filled = 0;
+      selects.forEach(sel => {
+        if (sel.value !== "") filled++;
+      });
+      document.getElementById('answered-count').textContent = filled;
+    }
+
+    document.querySelectorAll('select.answer-select').forEach(sel => {
+      sel.addEventListener('change', updateProgress);
+    });
+
+    function checkAnswers() {
+      const selects = document.querySelectorAll('select.answer-select');
+      let score = 0;
+      let unanswered = 0;
+      let mistakes = [];
+
+      selects.forEach(select => {
+        const userVal = select.value;
+        const correctVal = select.getAttribute('data-correct');
+        const id = select.getAttribute('data-id');
+        const label = select.getAttribute('data-ex');
+
+        if (!userVal) {
+          unanswered++;
+        }
+
+        select.disabled = true;
+
+        if (userVal === correctVal) {
+          score++;
+          select.classList.remove('wrong-answer');
+          select.classList.add('correct-answer');
+        } else {
+          select.classList.remove('correct-answer');
+          select.classList.add('wrong-answer');
+
+          let displayedUser = userVal ? userVal : "(не выбрано)";
+          let displayedCorrect = correctVal;
+
+          if (id.startsWith('ex2_')) {
+            const optUser = select.querySelector(`option[value="${userVal}"]`);
+            const optCorr = select.querySelector(`option[value="${correctVal}"]`);
+            displayedUser = optUser ? optUser.textContent : "(не выбрано)";
+            displayedCorrect = optCorr ? optCorr.textContent : correctVal;
+          }
+
+          mistakes.push({
+            id: id,
+            label: label,
+            userAnswer: displayedUser,
+            correctAnswer: displayedCorrect,
+            rule: explanations[id] || "Обратитесь к грамматическому справочнику по теме -ing form / infinitive."
+          });
+        }
+      });
+
+      if (unanswered > 0) {
+        const proceed = confirm(`Вы пропустили ${unanswered} вопросов из 40. Всё равно завершить и проверить?`);
+        if (!proceed) {
+          selects.forEach(s => {
+            s.disabled = false;
+            s.classList.remove('correct-answer', 'wrong-answer');
+          });
+          return;
+        }
+      }
+
+      const total = selects.length;
+      const percent = Math.round((score / total) * 100);
+
+      document.getElementById('final-score').textContent = score;
+      document.getElementById('final-percent').textContent = percent + '%';
+
+      // Расчет отметки по 5-балльной системе
+      const badge = document.getElementById('grade-badge-el');
+      let comment = "";
+      let commentColor = "";
+
+      badge.className = "grade-badge";
+
+      if (score >= 36) {
+        badge.classList.add('grade-5');
+        badge.textContent = "Отметка: «5» (Отлично)";
+        comment = "Великолепный результат! Вы превосходно ориентируетесь во всех нюансах темы!";
+        commentColor = "var(--success)";
+      } else if (score >= 30) {
+        badge.classList.add('grade-4');
+        badge.textContent = "Отметка: «4» (Хорошо)";
+        comment = "Хорошая работа! Обратите внимание на разобранные ниже неточности.";
+        commentColor = "var(--primary)";
+      } else if (score >= 20) {
+        badge.classList.add('grade-3');
+        badge.textContent = "Отметка: «3» (Удовлетворительно)";
+        comment = "Базовый уровень освоен, но смысловые глаголы требуют повторения.";
+        commentColor = "var(--warning)";
+      } else {
+        badge.classList.add('grade-2');
+        badge.textContent = "Отметка: «2» (Неудовлетворительно)";
+        comment = "Материал не усвоен. Обязательно прочитайте разбор ошибок и пройдите тест заново.";
+        commentColor = "var(--error)";
+      }
+
+      const commentEl = document.getElementById('final-comment');
+      commentEl.textContent = comment;
+      commentEl.style.color = commentColor;
+
+      const container = document.getElementById('error-list-container');
+      container.innerHTML = "";
+
+      if (mistakes.length === 0) {
+        container.innerHTML = `
+          <div class="all-correct-box">
+            Блестяще! Вы не допустили ни единой ошибки из 40 заданий!
+          </div>
+        `;
+      } else {
+        mistakes.forEach(m => {
+          const item = document.createElement('div');
+          item.className = 'error-item';
+          item.innerHTML = `
+            <div class="item-title">${m.label}</div>
+            <div class="choice-info">
+              ❌ <strong>Ваш ответ:</strong> <span style="color: var(--error);">${m.userAnswer}</span><br>
+              ✔️ <strong>Правильно:</strong> <span style="color: var(--success); font-weight:700;">${m.correctAnswer}</span>
+            </div>
+            <div class="rule-text">
+              <strong>Правило:</strong> ${m.rule}
+            </div>
+          `;
+          container.appendChild(item);
+        });
+      }
+
+      const resultsSection = document.getElementById('results-section');
+      resultsSection.style.display = 'block';
+      document.getElementById('submit-btn').style.display = 'none';
+      document.getElementById('reset-btn').style.display = 'inline-flex';
+
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function resetWorksheet() {
+      const selects = document.querySelectorAll('select.answer-select');
+      selects.forEach(select => {
+        select.disabled = false;
+        select.value = "";
+        select.classList.remove('correct-answer', 'wrong-answer');
+      });
+
+      updateProgress();
+
+      document.getElementById('results-section').style.display = 'none';
+      document.getElementById('submit-btn').style.display = 'inline-flex';
+      document.getElementById('reset-btn').style.display = 'none';
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
